@@ -14,7 +14,8 @@ int convert(short oct) {
     int bin = 0;
 
     // Converting octal to decimal
-    while (oct != 0) {
+    while (oct != 0) 
+    {
         dec += (oct % 10) * pow(8, i);
         ++i;
         oct /= 10;
@@ -22,7 +23,8 @@ int convert(short oct) {
     i = 1;
 
    // Converting decimal to binary
-    while (dec != 0) {
+    while (dec != 0) 
+    {
         bin += (dec % 2) * i;
         dec /= 2;
         i *= 10;
@@ -44,7 +46,8 @@ void printPermissions(int binary_code){
     int  ten_power            = 10;
     int  code_length          = 0;
     
-    if (binary_code > 0){
+    if (binary_code > 0)
+    {
         // Find the length of the pseudo binary code
         code_length = floor(log10(abs(binary_code))) + 1;
     }
@@ -58,15 +61,16 @@ void printPermissions(int binary_code){
         for (short permissions = 0; permissions < 3; permissions++)
         {          
 
-            if(9 - code_length > 0)
+            if (9 - code_length > 0)
             {
                 check_if_true = 0; 
             }
-            if (9 - code_length <= 0){
+            if (9 - code_length <= 0)
+            {
                 // Take the digits of the decimal number 
                 // (which represents the binary code) 
                 // one by one and from left to righ
-                while(sequent_digit >= ten_power)
+                while (sequent_digit >= ten_power)
                 {
                     sequent_digit = sequent_digit / 10;
                 }
@@ -78,7 +82,8 @@ void printPermissions(int binary_code){
             sequent_digit = binary_code;
 
 
-            switch(permissions) {
+            switch (permissions) 
+            {
                 case 0:
                     (check_if_true == 1) ? (charToAdd = 'R') : (charToAdd = '-');
                     strncat(users_permissions, &charToAdd, 1);               
