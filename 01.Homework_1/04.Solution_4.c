@@ -7,9 +7,9 @@
 // (which mimics octal number system format)
 // into an int that contains only ones and zeros.
 // The purpose of this is to mimic a binary format!
-int convert(short oct) {
+int convert(short oct){
 
-    unsigned short dec = 0;
+    short dec = 0;
     int i = 0;
     int bin = 0;
 
