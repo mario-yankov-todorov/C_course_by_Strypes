@@ -45,7 +45,7 @@ bool isFull(uint64_t set){
     }
 }
 
-bool  isSubset(uint64_t setA, uint64_t setB){
+bool isSubset(uint64_t setA, uint64_t setB){
     // Check if intersection of setA and setB is equal to setB.
     // Check if union of setA and setB is equal to setA.
     if(((setA & setB) == setB) && ((setA | setB) == setA)){
