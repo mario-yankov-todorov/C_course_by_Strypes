@@ -21,7 +21,8 @@ int main(){
     
     int testMacro_1 = 0;
     int testMacro_2 = 0;
-    int testBitwiseMacro = 0;
+    int testBitwiseMacro_1 = 0;
+    long testBitwiseMacro_2 = 0;
     putchar('\n');
 
     // Test MAX
@@ -38,40 +39,40 @@ int main(){
     printf("Test MIN: %d\n", testMacro_2);
     putchar('\n');
 
-    // Test SETBIT
-    testBitwiseMacro = 0xeeeeeeee;
-    SETBIT(testBitwiseMacro, 0);
-    printf("Test SETBIT: %x\n", testBitwiseMacro);
-    testBitwiseMacro = 0xeeeeeeee;
-    SETBIT(testBitwiseMacro, 4);
-    printf("Test SETBIT: %x\n", testBitwiseMacro);
+    // Test SETBIT / with int and long /
+    testBitwiseMacro_1 = 0xeeeeeeee;
+    SETBIT(testBitwiseMacro_1, 0);
+    printf("Test SETBIT: %x\n", testBitwiseMacro_1);
+    testBitwiseMacro_2 = 0xeeeeeeeeeeeeeeee;
+    SETBIT(testBitwiseMacro_2, 4);
+    printf("Test SETBIT: %lx\n", testBitwiseMacro_2);
     putchar('\n');
 
-    // Test CLEARBIT
-    testBitwiseMacro = 0xffffffff;
-    CLEARBIT(testBitwiseMacro, 0);
-    printf("Test CLEARBIT: %x\n", testBitwiseMacro);
-    testBitwiseMacro = 0xffffffff;
-    CLEARBIT(testBitwiseMacro, 4);
-    printf("Test CLEARBIT: %x\n", testBitwiseMacro);
+    // Test CLEARBIT / with int and long /
+    testBitwiseMacro_1 = 0xffffffff;
+    CLEARBIT(testBitwiseMacro_1, 0);
+    printf("Test CLEARBIT: %x\n", testBitwiseMacro_1);
+    testBitwiseMacro_2 = 0xffffffffffffffff;
+    CLEARBIT(testBitwiseMacro_2, 4);
+    printf("Test CLEARBIT: %lx\n", testBitwiseMacro_2);
     putchar('\n');
 
-    // Test INVERSEBIT
-    testBitwiseMacro = 0xf0f0f0f0;
-    INVERSEBIT(testBitwiseMacro, 8);
-    printf("Test INVERSEBIT: %x\n", testBitwiseMacro);
-    testBitwiseMacro = 0xf0f0f0f0;
-    INVERSEBIT(testBitwiseMacro, 12);
-    printf("Test INVERSEBIT: %x\n", testBitwiseMacro);
+    // Test INVERSEBIT / with int and long /
+    testBitwiseMacro_1 = 0xf0f0f0f0;
+    INVERSEBIT(testBitwiseMacro_1, 8);
+    printf("Test INVERSEBIT: %x\n", testBitwiseMacro_1);
+    testBitwiseMacro_2 = 0xf0f0f0f0f0f0f0f0;
+    INVERSEBIT(testBitwiseMacro_2, 12);
+    printf("Test INVERSEBIT: %lx\n", testBitwiseMacro_2);
     putchar('\n');
 
-    // Test CHECKBIT
-    testBitwiseMacro = 0xf0f0f0f0;
-    testBitwiseMacro = CHECKBIT(testBitwiseMacro, 8);
-    printf("Test CHECKBIT: %x\n", testBitwiseMacro);
-    testBitwiseMacro = 0xf0f0f0f0;
-    testBitwiseMacro = CHECKBIT(testBitwiseMacro, 12);
-    printf("Test CHECKBIT: %x\n", testBitwiseMacro);
+    // Test CHECKBIT / with int and long /
+    testBitwiseMacro_1 = 0xf0f0f0f0;
+    testBitwiseMacro_1 = CHECKBIT(testBitwiseMacro_1, 8);
+    printf("Test CHECKBIT: %x\n", testBitwiseMacro_1);
+    testBitwiseMacro_2 = 0xf0f0f0f0f0f0f0f0;
+    testBitwiseMacro_2 = CHECKBIT(testBitwiseMacro_2, 12);
+    printf("Test CHECKBIT: %lx\n", testBitwiseMacro_2);
     putchar('\n');
 
     // Test SWAP
