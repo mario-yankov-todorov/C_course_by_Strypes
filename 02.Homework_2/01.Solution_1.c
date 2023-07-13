@@ -90,6 +90,14 @@ char numElements(uint64_t set){
     }
     // Return recursively!
     return (set & 1) + numElements(set >> 1);
+    
+    // Alternative solution:
+    // char count = 0;
+    // while (set) {
+    //     count += set & 1;
+    //     set >>= 1;
+    // }
+    // return count;
 }
 
 int main() {    
