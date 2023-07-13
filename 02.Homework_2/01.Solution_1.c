@@ -3,6 +3,9 @@
 #include<stdint.h>
 
 
+// Alternative solutions that look more elegant are added to some functions,
+// at a later stage of the C course!  
+
 bool isEmpty(uint64_t set){
     // Check if there are any ones in the set.
     if (set){
@@ -10,6 +13,10 @@ bool isEmpty(uint64_t set){
     }else{
         return true;
     }
+    // Alternative solution:
+    // uint64_t temp = 0xffffffffffffffff;
+    // set = !(set & temp);   
+    // return set;
 }
 
 uint64_t add(uint64_t set, char index){
@@ -20,6 +27,9 @@ uint64_t add(uint64_t set, char index){
     set = set | temp;
     
     return set;
+    // Alternative solution:
+    // set |= (1ULL << (63 - index));  
+    // return set;
 }
 
 uint64_t removee(uint64_t set, char index){
@@ -33,6 +43,9 @@ uint64_t removee(uint64_t set, char index){
         set = set ^ temp;
     }   
     return set;
+    // Alternative solution:
+    // set &= ~(1ULL << (63 - index));  
+    // return set;
 }
 
 bool isFull(uint64_t set){
