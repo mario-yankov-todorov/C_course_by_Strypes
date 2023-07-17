@@ -10,7 +10,7 @@ typedef struct car {
     char model[20];
     uint16_t maxspeed;
     double price;
-}Car;
+} Car;
  
 int comparatorModelAscending (const void* struct1, const void* struct2) {
     Car *car1 = (Car *)struct1;
@@ -119,7 +119,7 @@ int main(){
     // srand(time(NULL));
 
     int n;
-    // Get the sort function from the user.
+    // Get the number from the user that matches a sort function.
     printf("\nPlease select a member to sort :\n1-Model Asc  3-Maxspeed Asc  5-Price Asc\n");
     printf("2-Model Des  4-Maxspeed Des  6-Price Des\n");
     printf("Your choice: ");
@@ -134,6 +134,7 @@ int main(){
     // Define a pointer to assign the value from the getComparator().
     int(*comparatorPointer)(const void*, const void*);
 
+    // Fill each struct from the array with values!
     putchar('\n');
     for (size_t i = 0; i < 10; i++)
     {
@@ -146,7 +147,7 @@ int main(){
         cars[i].price = randRange(1000.00, 100000.00);
     }
 
-    // Print struct values before sorting.
+    // Print the values of each struct before sorting.
     printf("-------BEFORE SORTING-------\n");
     for (size_t i = 0; i < 10; i++)
     {
@@ -157,7 +158,7 @@ int main(){
     }
     putchar('\n');
 
-    // Sort the structure by member selected by the user.
+    // Sort the array by struct member selected by the user.
     comparatorPointer = getComparator(n);
     if(comparatorPointer != NULL){
         qsort(cars, 10, sizeof(Car), getComparator(n));
@@ -168,7 +169,7 @@ int main(){
         return EXIT_FAILURE;
     }
 
-    // Print struct values after sorting.
+    // Print the values of each struct after sorting.
     printf("-------AFTER SORTING-------\n");
     for (size_t i = 0; i < 10; i++)
     {
